@@ -15,7 +15,7 @@ npm install @gretzky/cratylus
 
 ## Levenshtein Distance
 
-The Levenshtein distance is the minimum number of single-character edits required to change one word into another.[Learn more](https://en.wikipedia.org/wiki/Levenshtein_distance).
+The [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) is the minimum number of single-character edits required to change one word into another.
 
 ### `levenshtein(a: string, b: string, calcRatio: boolean): number`
 
