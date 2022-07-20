@@ -71,14 +71,14 @@ Consider an array to be 1 sentence.
 const s1 = ["this", "is", "a", "sentence"]
 const s2 = ["this is", "a sentence"]
 const s3 = ["tHiS iS", "a SeNtEnCe"]
-const s3 = ["this is", "a sentence", "!"]
-const s4 = ["this", "is", "a sentence", "?"]
+const s4 = ["this is", "a sentence", "!"]
+const s5 = ["this", "is", "a sentence", "?"]
 
 buildSentence(s1) // "This is a sentence."
 buildSentence(s2) // "This is a sentence."
 buildSentence(s3) // "This is a sentence."
 buildSentence(s4) // "This is a sentence!"
-buildSentence(s4) // "This is a sentence?"
+buildSentence(s5) // "This is a sentence?"
 ```
 
 ## String Formatting
