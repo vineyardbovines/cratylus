@@ -22,8 +22,8 @@ The [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) i
 Returns the levenshtein distance calculation iteratively over 2 matrix rows.
 
 ```ts
-levenshtein("crack", "whack") // 2
-levenshtein("8675309", "1234567") // 6
+levenshtein("crack", "whack"); // 2
+levenshtein("8675309", "1234567"); // 6
 ```
 
 ## Plurality
@@ -39,7 +39,7 @@ There are 2 enums and 2 functions for using plurals based off of the Arabic lang
 
 ### `PluralForm` and `PluralGuard`
 
-Each enum is keyed by the 5 plural forms. 
+Each enum is keyed by the 5 plural forms.
 
 `PluralForm` returns the string name of the plural (e.g. `none = none`).
 
@@ -50,13 +50,13 @@ Each enum is keyed by the 5 plural forms.
 Returns the string type of the plural based on the passed number.
 
 ```ts
-getPluralForm(0) // "none"
-getPluralForm(1) // "one"
-getPluralForm(2) // "two"
-getPluralForm(4) // "few"
-getPluralForm(15) // "many"
-getPluralForm(66) // "many"
-getPluralForm(369) // "other"
+getPluralForm(0); // "none"
+getPluralForm(1); // "one"
+getPluralForm(2); // "two"
+getPluralForm(4); // "few"
+getPluralForm(15); // "many"
+getPluralForm(66); // "many"
+getPluralForm(369); // "other"
 ```
 
 ## Sentence
@@ -68,17 +68,17 @@ Returns a sentence built from an array of strings. Any punctuation in the array 
 Consider an array to be 1 sentence.
 
 ```ts
-const s1 = ["this", "is", "a", "sentence"]
-const s2 = ["this is", "a sentence"]
-const s3 = ["tHiS iS", "a SeNtEnCe"]
-const s4 = ["this is", "a sentence", "!"]
-const s5 = ["this", "is", "a sentence", "?"]
+const s1 = ["this", "is", "a", "sentence"];
+const s2 = ["this is", "a sentence"];
+const s3 = ["tHiS iS", "a SeNtEnCe"];
+const s4 = ["this is", "a sentence", "!"];
+const s5 = ["this", "is", "a sentence", "?"];
 
-buildSentence(s1) // "This is a sentence."
-buildSentence(s2) // "This is a sentence."
-buildSentence(s3) // "This is a sentence."
-buildSentence(s4) // "This is a sentence!"
-buildSentence(s5) // "This is a sentence?"
+buildSentence(s1); // "This is a sentence."
+buildSentence(s2); // "This is a sentence."
+buildSentence(s3); // "This is a sentence."
+buildSentence(s4); // "This is a sentence!"
+buildSentence(s5); // "This is a sentence?"
 ```
 
 ## String Formatting
@@ -89,15 +89,15 @@ Enum that represents 5 different ways of casing a string.
 
 ```ts
 // capitalizes the first letter of a string, regardless of whether or not it has other words
-TextCasing.capitalize // e.g. Foo bar
+TextCasing.capitalize; // e.g. Foo bar
 // uppercases a string
-TextCasing.upper // e.g. FOO BAR
+TextCasing.upper; // e.g. FOO BAR
 // lowercases a string
-TextCasing.lower // e.g. foo bar
+TextCasing.lower; // e.g. foo bar
 // title cases a string, capitalizing the first letter of each individual word in the string
-TextCasing.title // e.g. Foo Bar
+TextCasing.title; // e.g. Foo Bar
 // sentence cases a string - very similar to capitalize but the regex is adjusted slightly
-TextCasing.sentence // e.g. Foo bar
+TextCasing.sentence; // e.g. Foo bar
 ```
 
 ### `stringFormat(value: string, format: TextCasing): string`
@@ -105,11 +105,19 @@ TextCasing.sentence // e.g. Foo bar
 Returns a string formatted to a given text casing.
 
 ```ts
-const str = "never gonna give you up"
+const str = "never gonna give you up";
 
-stringFormat(str, TextCasing.capitalize) // "Never gonna give you up"
-stringFormat(str, TextCasing.sentence) // "Never gonna give you up"
-stringFormat(str, TextCasing.title) // "Never Gonna Give You Up"
-stringFormat(str, TextCasing.lower) // "never gonna give you up"
-stringFormat(str, TextCasing.upper) // "NEVER GONNA GIVE YOU UP"
+stringFormat(str, TextCasing.capitalize); // "Never gonna give you up"
+stringFormat(str, TextCasing.sentence); // "Never gonna give you up"
+stringFormat(str, TextCasing.title); // "Never Gonna Give You Up"
+stringFormat(str, TextCasing.lower); // "never gonna give you up"
+stringFormat(str, TextCasing.upper); // "NEVER GONNA GIVE YOU UP"
+```
+
+### `removeDiacritics(str: string): string`
+
+Finds and replaces diacritic characters in a string (e.g. `Ä => A`).
+
+```ts
+removeDiacritics("Älesund"); // Alesund
 ```
